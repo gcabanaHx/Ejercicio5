@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,23 @@ namespace Ejercicio4.Tests
 
         public BaseTest()
         {
-            DriverInstanceManager.Driver.Navigate().GoToUrl("https://ultimateqa.com/automation/");
+            //DriverInstanceManager.Driver.Navigate().GoToUrl("http://hxv-evaluaciondev.backoffice.hexacta.com/#!/");
         }
 
+        public void navigateToBackOffice()
+        {
+            DriverInstanceManager.Driver.Navigate().GoToUrl("http://hxv-evaluaciondev.backoffice.hexacta.com/#!/");
+
+        }
+        public IWebDriver driver()
+        {
+            return DriverInstanceManager.Driver;
+        }
+
+        public WebDriverWait wait()
+        {
+            return wait();
+        }
         [TearDown]
         public void close()
         {

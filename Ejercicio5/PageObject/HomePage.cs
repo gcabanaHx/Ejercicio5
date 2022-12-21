@@ -13,7 +13,7 @@ namespace Ejercicio4.PageObject
     public class HomePage : BasePage//Herencia para usar la misma instancia
                                     // del driver inicializada en base test
     {
-        public HomePage() :base(By.CssSelector(".page-parent"))
+        public HomePage() :base(By.CssSelector("body"))
         {
             
         }
@@ -27,5 +27,12 @@ namespace Ejercicio4.PageObject
         {
             courses.Click();
         }
+        //
+        private IWebElement crearUsuario => Container.FindElement(By.CssSelector(".btn-CTA"));
+        public void clickCrearUsuario()
+        {
+            crearUsuario.Click();   
+        }
+
     }
 }

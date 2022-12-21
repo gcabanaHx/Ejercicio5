@@ -1,12 +1,14 @@
-﻿using OpenQA.Selenium;
+﻿using Ejercicio5;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio4
+namespace Ejercicio5
 {
     public static class DriverInstanceManager
     {
@@ -25,6 +27,7 @@ namespace Ejercicio4
                     driver = new ChromeDriver(options);
                     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
                     driver.Manage().Window.Maximize();
+                    
                 }
                 return driver;
             }
