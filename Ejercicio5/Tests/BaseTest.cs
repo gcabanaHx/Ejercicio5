@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Ejercicio5;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -23,9 +24,11 @@ namespace Ejercicio4.Tests
             DriverInstanceManager.Driver.Navigate().GoToUrl("http://hxv-evaluaciondev.backoffice.hexacta.com/#!/");
 
         }
-        public IWebDriver driver()
+
+        public void navigateToUserLogin()
         {
-            return DriverInstanceManager.Driver;
+            DriverInstanceManager.Driver.Navigate().GoToUrl("http://hxv-evaluaciondev.interview.hexacta.com/#!/");
+
         }
 
         public WebDriverWait wait()

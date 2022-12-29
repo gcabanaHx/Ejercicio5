@@ -14,7 +14,7 @@ public class PBI78254:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void CreateUser()
+        public void CreateUser() //Create user with ingles, logica y testingtecnico
         {
         navigateToBackOffice();
         hp.clickCrearUsuario();

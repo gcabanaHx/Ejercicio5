@@ -36,6 +36,9 @@ namespace Ejercicio4.PageObject
         public IWebElement btnCrearUsuario => Container.FindElement(By.CssSelector("button.btn-CTA"));
         public IWebElement userCreationFail => Container.FindElement(By.CssSelector(".error-ocurrido"));
 
+        //Flag
+        public bool flag = true ;
 
+        public IWebElement userCreationFailI => Container.FindElement(By.CssSelector(".error-ocurrido i"));
     }
 }

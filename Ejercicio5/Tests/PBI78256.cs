@@ -17,7 +17,7 @@ public class PBI78256 : BaseTest
 
 
     [Test]
-    public void CreateUser()
+    public void CreateUser() //Create user only with testing
     {
         navigateToBackOffice();
         hp.clickCrearUsuario();
