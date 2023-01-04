@@ -20,18 +20,18 @@ public class PBI78256 : BaseTest
     public void CreateUser() //Create user only with testing
     {
         navigateToBackOffice();
-        hp.clickCrearUsuario();
+        hp.crearUsuarioBtn.Click();
         ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
         
         //Complete user and password
-        ucp.userField.SendKeys("testingAcademy_054");
-        ucp.pwdField.SendKeys("abc123");
+        ucp.userField.Write("testingAcademy_054");
+        ucp.pwdField.Write("abc123");
        
         //Select checkboxes
         ucp.testingCheckBox.Click();
        
         //Click crear usuario
-        ucp.btnCrearUsuario.Click();
+        ucp.crearUsuarioBtn.Click();
 
 
         //Verify if user is created

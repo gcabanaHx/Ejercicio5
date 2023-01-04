@@ -5,31 +5,27 @@ using NUnit;
 using NUnit.Framework;
 using Ejercicio4.Tests;
 using Ejercicio4;
-using Ejercicio5;
+using Ejercicio5.DriverManager;
+using OpenQA.Selenium.DevTools;
 
-public class PBI78319:BaseTest 
-    {
+public class PBI78319 : BaseTest
+{
 
     LoginPage lp = new LoginPage();
 
     [Test]
-        public void VerifyUser() //Verify if user is able to log in with pending exams
-        {
+    public void LoginPage_UserLogin_VerifyIfUserIsAbleToLoginWithPendingExams()
+    {
         navigateToUserLogin();
-        lp.userInput.SendKeys("testingacademy_043");
-        lp.passwordInput.SendKeys("abc123");
-        lp.ingresarBtn.Click();
+        lp.userInput.Write("testingacademy_043");
+        lp.passwordInput.Write("abc123");
+        lp.ingresarBtn.ClickWait();
+        Assert.True(lp.userDataLabel.Displayed);
 
-        Thread.Sleep(500);//Explicit wait
-        if (DriverInstanceManager.Driver.Url.Contains("hexacta.com/#!/testSelection"))
-        {
-            Console.WriteLine("Loged");
-            lp.flag = true;
-        }
-        Assert.IsTrue(lp.flag);
-        }
-
-
- 
     }
+
+
+
+
+}
 

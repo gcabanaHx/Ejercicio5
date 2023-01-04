@@ -1,5 +1,5 @@
 ﻿using Ejercicio4.Tests;
-using Ejercicio5;
+using Ejercicio5.DriverManager;
 using OpenQA.Selenium;
 
 namespace Ejercicio4.PageObject
@@ -21,5 +21,11 @@ namespace Ejercicio4.PageObject
         {
             get { return this.Driver.FindElement(locator); }
         }
+
+        public void WaitUntilVisible(int secondsTimeout = 10)
+        {
+            this.Driver.WaitUntilVisible(this.locator, secondsTimeout);
+        }
     } 
+
 }

@@ -1,4 +1,5 @@
 ﻿using Ejercicio4.Tests;
+using Ejercicio5.Controls;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
@@ -21,9 +22,30 @@ namespace Ejercicio4.PageObject
         {
             Driver.Navigate().Refresh();
         }
-        public IWebElement userField => Container.FindElement(By.CssSelector("#usr"));
-        public IWebElement pwdField => Container.FindElement(By.CssSelector("#pwd"));
-
+        //public IWebElement userField => Container.FindElement(By.CssSelector("#usr"));
+        public TextBox userField
+        {
+            get
+            {
+                try
+                {
+                    return new TextBox(By.CssSelector("#usr"));
+                }
+                catch { return null; }
+            }
+        }
+        //public IWebElement pwdField => Container.FindElement(By.CssSelector("#pwd"));
+        public TextBox pwdField
+        {
+            get
+            {
+                try
+                {
+                    return new TextBox(By.CssSelector("#pwd"));
+                }
+                catch { return null; }
+            }
+        }
         //Checkboxes
         public IWebElement inglesCheckBox => Container.FindElement(By.CssSelector("input[name=ingles]"));
         public IWebElement logicaCheckBox => Container.FindElement(By.CssSelector("input[name=logica]"));
@@ -31,14 +53,36 @@ namespace Ejercicio4.PageObject
         public IWebElement tecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=tecnico]"));
         public IWebElement testingTecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=testingTecnico]"));
 
-   
-        //Btn
-        public IWebElement btnCrearUsuario => Container.FindElement(By.CssSelector("button.btn-CTA"));
-        public IWebElement userCreationFail => Container.FindElement(By.CssSelector(".error-ocurrido"));
 
+        //Btn
+        // public IWebElement userCreation => Container.FindElement(By.CssSelector("button.btn-CTA"));
+        public Button crearUsuarioBtn
+        {
+            get
+            {
+                try
+                {
+                    return new Button(By.CssSelector("button.btn-CTA"));
+                }
+                catch { return null; }
+            }
+        }
+
+        //public IWebElement userCreationFail => Container.FindElement(By.CssSelector(".error-ocurrido"));
+        public Label userCreationFail
+        {
+            get
+            {
+                try
+                {
+                    return new Label(By.CssSelector(".error-ocurrido"));
+                }
+                catch { return null; }
+            }
+        }
         //Flag
         public bool flag = true ;
 
-        public IWebElement userCreationFailI => Container.FindElement(By.CssSelector(".error-ocurrido i"));
+      
     }
 }

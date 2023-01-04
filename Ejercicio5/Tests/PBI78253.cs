@@ -17,17 +17,17 @@ public class PBI78253:BaseTest
         public void CreateUser() //Create user with ingles logica, y tecnico
         {
         navigateToBackOffice();
-        hp.clickCrearUsuario();
+        hp.crearUsuarioBtn.Click();
         ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
         //Complete user and password
-        ucp.userField.SendKeys("testingAcademy_044");
-        ucp.pwdField.SendKeys("abc123");
+        ucp.userField.Write("testingAcademy_044");
+        ucp.pwdField.Write("abc123");
         //Select checkboxes
         ucp.inglesCheckBox.Click();
         ucp.logicaCheckBox.Click();
         ucp.tecnicoCheckBox.Click();
         //Click crear usuario
-        ucp.btnCrearUsuario.Click();
+        ucp.crearUsuarioBtn.Click();
 
         //Chek if user is created
         if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))

@@ -12,26 +12,14 @@ public class PBI78318:BaseTest
     LoginPage lp = new LoginPage();
 
     [Test]
-        public void VerifyUser() //Verify login after completing all exams
+        public void LoginPage_UserLogin_UserIsNotAbleToLoginAfterCompletingExams() //Verify login after completing all exams
         {
         navigateToUserLogin();
-        lp.userInput.SendKeys("testingacademy_042");
-        lp.passwordInput.SendKeys("abc123");
-        lp.ingresarBtn.Click();
-        
-        Thread.Sleep(500); //Explicit wait
-
-        if (lp.loginFail.Displayed)
-            {
-            lp.flag = false;
-            Console.WriteLine(lp.loginFail.Text);
-            }
-
-        Assert.False(lp.flag);
-      
+        lp.userInput.Write("testingacademy_042");
+        lp.passwordInput.Write("abc123");
+        lp.ingresarBtn.ClickWait();
+        lp.loginFail.WaitUntilVisible(5);
+        Assert.True(lp.loginFail.Displayed);      
         }
-
-
- 
     }
 

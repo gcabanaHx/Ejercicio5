@@ -15,11 +15,12 @@ public class PBI78323:BaseTest
         public void VerifyUser() //Verify if admin  is able to create user with 2 technical exams
         {
         navigateToBackOffice();
-        hp.clickCrearUsuario();
-        ucp.refresh();
+        hp.crearUsuarioBtn.Click();
+
         //Complete user and password
-        ucp.userField.SendKeys("testingAcademy_095");
-        ucp.pwdField.SendKeys("abc123");
+        ucp.userField.WaitUntilVisible(2);
+        ucp.userField.Write("testingAcademy_095");
+        ucp.pwdField.Write("abc123");
         //Select 2 technical exams
         ucp.tecnicoCheckBox.Click();
         ucp.testingTecnicoCheckBox.Click();

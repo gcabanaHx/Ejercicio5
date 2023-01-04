@@ -1,4 +1,5 @@
 ﻿using Ejercicio4.Tests;
+using Ejercicio5.Controls;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
@@ -28,11 +29,21 @@ namespace Ejercicio4.PageObject
             courses.Click();
         }
         //
-        private IWebElement crearUsuario => Container.FindElement(By.CssSelector(".btn-CTA"));
-        public void clickCrearUsuario()
+        public Button crearUsuarioBtn
         {
-            crearUsuario.Click();   
+            get
+            {
+                try
+                {
+                    return new Button(By.CssSelector(".btn-CTA"));
+                }
+                catch
+                {
+                    return null;
+                }
+            }
         }
+     
 
     }
 }

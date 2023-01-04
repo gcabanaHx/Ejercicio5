@@ -1,35 +1,20 @@
 using Ejercicio4.PageObject;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using NUnit;
-using NUnit.Framework;
 using Ejercicio4.Tests;
-using Ejercicio4;
+using Ejercicio5.Controls;
 
-public class PBI78321:BaseTest 
-    {
+public class PBI78321 : BaseTest
+{
 
     LoginPage lp = new LoginPage();
 
+
     [Test]
-        public void VerifyUser() //Verify if user is able to log in without completing credentials
-        {
+    public void LoginPage_UserLogin_VerifyIfUserIsNotAbleToLogInWithoutCompletingCredentials()
+    {
         navigateToUserLogin();
         lp.ingresarBtn.Click();
-
-        Thread.Sleep(500);//Explicit wait
-
-            if (lp.loginFail.Displayed)
-            {
-            lp.flag = false;
-            Console.WriteLine(lp.loginFail.Text);
-            }
-
-        Assert.False(lp.flag);
-      
-        }
-
-
- 
+        lp.loginFail.WaitUntilVisible(2);
+        Assert.True(lp.loginFail.Displayed);
     }
+}
 
