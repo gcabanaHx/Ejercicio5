@@ -3,6 +3,7 @@ using Ejercicio5.Controls;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,12 +48,67 @@ namespace Ejercicio4.PageObject
             }
         }
         //Checkboxes
-        public IWebElement inglesCheckBox => Container.FindElement(By.CssSelector("input[name=ingles]"));
-        public IWebElement logicaCheckBox => Container.FindElement(By.CssSelector("input[name=logica]"));
-        public IWebElement testingCheckBox => Container.FindElement(By.CssSelector("input[name=testing]"));
-        public IWebElement tecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=tecnico]"));
-        public IWebElement testingTecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=testingTecnico]"));
+        //public IWebElement inglesCheckBox => Container.FindElement(By.CssSelector("input[name=ingles]"));
+        public CheckBox inglesCheckBox
+        {
+            get
+            {
+                try
+                {
+                    return new CheckBox(By.CssSelector("input[name=ingles]"));
+                }
+                catch { return null; }
+            }
+        }
+        //public IWebElement logicaCheckBox => Container.FindElement(By.CssSelector("input[name=logica]"));
+        public CheckBox logicaCheckBox
+        {
+            get
+            {
+                try
+                {
+                    return new CheckBox(By.CssSelector("input[name=logica]"));
+                }
+                catch { return null; }
+            }
+        }
+        //public IWebElement testingCheckBox => Container.FindElement(By.CssSelector("input[name=testing]"));
+        public CheckBox testingCheckBox
+        {
+            get
+            {
+                try
+                {
+                    return new CheckBox(By.CssSelector("input[name=testing]"));
+                }
+                catch { return null; }
+            }
+        }
 
+        //public IWebElement tecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=tecnico]"));
+        public CheckBox tecnicoCheckBox
+        {
+            get
+            {
+                try
+                {
+                    return new CheckBox(By.CssSelector("input[name=tecnico]"));
+                }
+                catch { return null; }
+            }
+        }
+        //public IWebElement testingTecnicoCheckBox => Container.FindElement(By.CssSelector("input[name=testingTecnico]"));
+        public CheckBox testingTecnicoCheckBox
+        {
+            get
+            {
+                try
+                {
+                    return new CheckBox(By.CssSelector("input[name=testingTecnico]"));
+                }
+                catch { return null; }
+            }
+        }
 
         //Btn
         // public IWebElement userCreation => Container.FindElement(By.CssSelector("button.btn-CTA"));
@@ -80,9 +136,48 @@ namespace Ejercicio4.PageObject
                 catch { return null; }
             }
         }
+
+        public Label notEmpty
+        {
+            get
+            {
+                try
+                {
+                    return new Label(By.CssSelector("ng-not-empty"));
+                }
+                catch { return null; }
+            }
+        }
+
+
         //Flag
         public bool flag = true ;
 
-      
+        public Label tecnicoSelected
+        {
+            get
+            {
+                try
+                {
+                    return new Label(By.XPath(("//input[@name='tecnico' and @class='ng-valid ng-dirty ng-touched ng-not-empty ng-valid-parse']")));
+                }
+                catch { return null; }
+            }
+        }
+        public Label testingTecnicoSelected
+        {
+            get
+            {
+                try
+                {
+                    return new Label(By.XPath(("//input[@name='testingTecnico' and @class='ng-valid ng-dirty ng-touched ng-not-empty ng-valid-parse']")));
+                }
+                catch { return null; }
+            }
+        }
+
+
     }
+
+  
 }

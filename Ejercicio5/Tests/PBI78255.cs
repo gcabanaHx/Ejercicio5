@@ -14,12 +14,11 @@ public class PBI78255:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void CreateUser() //Create user only with testing tecnico
+        public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams() //Create user only with testing tecnico
         {
         navigateToBackOffice();
         hp.crearUsuarioBtn.Click();
-        ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
-        //Complete user and password
+        ucp.userField.WaitUntilVisible(2);
         ucp.userField.Write("testingAcademy_044");
         ucp.pwdField.Write("abc123");
         //Select checkboxes

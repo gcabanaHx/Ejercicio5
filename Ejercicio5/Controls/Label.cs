@@ -31,6 +31,9 @@ namespace Ejercicio5.Controls
             }
         }
 
-      
+      public int elementosEnLista(IList<Label> a)
+        {
+            return a.Count();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Ejercicio4.Tests;
+using Ejercicio5.Controls;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
@@ -19,7 +20,18 @@ namespace Ejercicio4.PageObject
         }
 
         public bool flag = false;
-        public IWebElement userCreationSucces => Container.FindElement(By.CssSelector("strong[ng-show='user.message']"));
-        
+        //public IWebElement userCreationSucces => Container.FindElement(By.CssSelector("strong[ng-show='user.message']"));
+
+        public Label userCreationSucces
+        {
+            get
+            {
+                try
+                {
+                    return new Label(By.CssSelector("strong[ng-show='user.message']"));
+                }
+                catch { return null; }
+            }
+        }
     }
 }

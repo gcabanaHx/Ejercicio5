@@ -18,17 +18,6 @@ namespace Ejercicio4.PageObject
         {
             
         }
-        private IWebElement seleniumC => Container.FindElement(By.CssSelector("a[href*='selenium-with-c']"));
-        public void clickSeleniumCLink()
-        {
-            seleniumC.Click();
-        }
-        private IWebElement courses => Container.FindElement(By.CssSelector("a[href^=\"https://courses\"]"));
-        public void clickCoursesLink()
-        {
-            courses.Click();
-        }
-        //
         public Button crearUsuarioBtn
         {
             get

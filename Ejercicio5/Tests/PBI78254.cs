@@ -14,12 +14,11 @@ public class PBI78254:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void CreateUser() //Create user with ingles, logica y testingtecnico
+        public void UserCreationPage_UserCreation_AdminCreatesUserWithInglesLogicaAndTestingTecnicoExams() //Create user with ingles, logica y testingtecnico
         {
         navigateToBackOffice();
         hp.crearUsuarioBtn.Click();
-        ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
-        //Complete user and password
+        ucp.userField.WaitUntilVisible(2);
         ucp.userField.Write("testingAcademy_044");
         ucp.pwdField.Write("abc123");
         //Select checkboxes

@@ -14,13 +14,13 @@ public class PBI78253:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void CreateUser() //Create user with ingles logica, y tecnico
+        public void UserCreationPage_UserCreation_AdminCreatesUserWithInglesLogicaAndTecnicoExams() //Create user with ingles logica, y tecnico
         {
         navigateToBackOffice();
         hp.crearUsuarioBtn.Click();
-        ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
-        //Complete user and password
-        ucp.userField.Write("testingAcademy_044");
+
+        ucp.userField.WaitUntilVisible(10);
+        ucp.userField.Write("testingAcademy_058");
         ucp.pwdField.Write("abc123");
         //Select checkboxes
         ucp.inglesCheckBox.Click();
@@ -34,7 +34,7 @@ public class PBI78253:BaseTest
         {
             ulp.flag = false;
         }
-        else if (ulp.userCreationSucces.Text.Equals("El usuario se registró correctamente"))
+        else if (ulp.userCreationSucces.WaitUntilVisible(2))
         {
             ulp.flag = true;
             Console.WriteLine("User created");
