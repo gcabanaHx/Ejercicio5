@@ -21,10 +21,8 @@ public class PBI78257:BaseTest
         ucp.userField.WaitUntilVisible(2);
         ucp.userField.Write("testingAcademy_100");
         ucp.pwdField.Write("abc123");
-        //Select checkboxes
-        ucp.testingTecnicoCheckBox.Click();
-        //Click crear usuario
-        ucp.crearUsuarioBtn.Click();
+        ucp.testingTecnicoCheckBox.Click();//Select checkboxes
+        ucp.crearUsuarioBtn.Click();//Click crear usuario
 
         if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
         {

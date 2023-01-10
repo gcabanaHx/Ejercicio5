@@ -21,18 +21,11 @@ public class PBI78256 : BaseTest
     {
         navigateToBackOffice();
         hp.crearUsuarioBtn.Click();
-        ucp.refresh(); //if the page is not refreshed, stale element expection will be displayed
-        
-        //Complete user and password
-        ucp.userField.Write("testingAcademy_054");
+        ucp.userField.WaitUntilVisible(2);
+        ucp.userField.Write("T_A05");//Complete user and password
         ucp.pwdField.Write("abc123");
-       
-        //Select checkboxes
-        ucp.testingCheckBox.Click();
-       
-        //Click crear usuario
-        ucp.crearUsuarioBtn.Click();
-
+        ucp.testingCheckBox.Click();//Select checkboxes
+        ucp.crearUsuarioBtn.Click();//Click crear usuario
 
         //Verify if user is created
         if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))

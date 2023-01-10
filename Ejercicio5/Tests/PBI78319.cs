@@ -21,11 +21,6 @@ public class PBI78319 : BaseTest
         lp.passwordInput.Write("abc123");
         lp.ingresarBtn.ClickWait();
         Assert.True(lp.userDataLabel.Displayed);
-
     }
-
-
-
-
 }
 

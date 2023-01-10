@@ -20,14 +20,12 @@ public class PBI78253:BaseTest
         hp.crearUsuarioBtn.Click();
 
         ucp.userField.WaitUntilVisible(10);
-        ucp.userField.Write("testingAcademy_058");
+        ucp.userField.Write("T_A02");
         ucp.pwdField.Write("abc123");
-        //Select checkboxes
-        ucp.inglesCheckBox.Click();
-        ucp.logicaCheckBox.Click();
+        ucp.inglesCheckBox.Click();        //Select checkboxes
+        ucp.logicaCheckBox.Click();        //Select checkboxes
         ucp.tecnicoCheckBox.Click();
-        //Click crear usuario
-        ucp.crearUsuarioBtn.Click();
+        ucp.crearUsuarioBtn.Click();        //Click crear usuario
 
         //Chek if user is created
         if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
