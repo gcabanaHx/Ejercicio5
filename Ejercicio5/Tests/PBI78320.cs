@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Ejercicio4.Tests;
 using Ejercicio4;
 using Ejercicio5;
+using Ejercicio5.Controls;
 
 public class PBI78320 : BaseTest
 {
@@ -16,11 +17,11 @@ public class PBI78320 : BaseTest
     public void LoginPage_UserLogin_UserIsNotAbleToLoginWithNotCreatedUser() //Verify if user is unable to login with non created user
     {
         navigateToUserLogin();
-        lp.userInput.Write("user_not_created");
-        lp.passwordInput.Write("abc123");
-        lp.ingresarBtn.Click();
-        lp.loginFail.WaitUntilVisible(5); //Wait error display
-        Assert.True(lp.loginFail.Displayed);
+        lp.UserInput.Write("user_not_created");
+        lp.PasswordInput.Write("abc123");
+        lp.IngresarBtn.Click();
+        lp.LoginFail.WaitUntilVisible(5); //Wait error display
+        Assert.True(lp.LoginFail.Displayed);
     }
 }
 

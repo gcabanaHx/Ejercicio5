@@ -15,13 +15,13 @@ public class PBI78323 : BaseTest
     public void UserCreationPage_UserCreation_VerifyIfAdminIsNotAbleToCreateUserWith2OrMoreTechnicalExams() 
     {
         navigateToBackOffice();
-        hp.crearUsuarioBtn.Click();
-        ucp.userField.WaitUntilVisible(2);//Complete user and password
-        ucp.userField.Write("testingAcademy_095");
-        ucp.pwdField.Write("abc123");
-        ucp.tecnicoCheckBox.Click();     //Select 2 technical exams
-        ucp.testingTecnicoCheckBox.Click();
-        var tecnicoCheckboxClasses = ucp.tecnicoCheckBox.GetAttributeValue("class");//Assert if the first one is still selected
+        hp.CrearUsuarioBtn.Click();
+        ucp.UserField.WaitUntilVisible(2);//Complete user and password
+        ucp.UserField.Write("testingAcademy_095");
+        ucp.PwdField.Write("abc123");
+        ucp.TecnicoCheckBox.Click();     //Select 2 technical exams
+        ucp.TestingTecnicoCheckBox.Click();
+        var tecnicoCheckboxClasses = ucp.TecnicoCheckBox.GetAttributeValue("class");//Assert if the first one is still selected
         Assert.True(tecnicoCheckboxClasses.Contains("ng-empty")); 
   
     }

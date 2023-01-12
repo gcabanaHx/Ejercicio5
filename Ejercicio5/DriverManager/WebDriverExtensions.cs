@@ -41,6 +41,13 @@ namespace Ejercicio5.DriverManager
                     () => driver.FindElement(by).Displayed, secondsTimeout
                 );
         }
+        public static bool WaitUntilVisible(this IWebDriver driver, IWebElement webElement, int secondsTimeout = 80)
+        {
+            return driver.WaitUntil
+                (
+                    () => driver.ElementExists(webElement) && webElement.Displayed, secondsTimeout
+                );
+        }
 
         //Element exists
         public static bool ElementExists(this IWebDriver webDriver, IWebElement we)
@@ -62,6 +69,18 @@ namespace Ejercicio5.DriverManager
             {
                 driver.WaitUntilVisible(by, secondsTimeout);
                 return driver.FindElement(by);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static IWebElement FindElementWait(this IWebDriver driver,  IWebElement webElement, int secondsTimeout)
+        {
+            try
+            {
+                driver.WaitUntilVisible(webElement, secondsTimeout);
+                return driver.FindElement((By)webElement);
             }
             catch
             {

@@ -8,7 +8,7 @@ namespace Ejercicio5.Controls
     {
         protected By locator;
         private IWebElement webElement;
- 
+
         public BaseControl(By by)
         {
             this.locator = by;
@@ -52,7 +52,7 @@ namespace Ejercicio5.Controls
             {
                 try
                 {
-                    return this.Driver.FindElementWait(this.locator, 30);
+                    return this.Driver.FindElementWait(this.webElement, 30);
                 }
                 catch
                 {
@@ -87,7 +87,7 @@ namespace Ejercicio5.Controls
             }
         }
 
-   
+
 
         public void ScrollToElement()
         {
@@ -103,8 +103,13 @@ namespace Ejercicio5.Controls
 
         public bool WaitUntilVisible(int secondsTimeout = 80)
         {
-            return this.Driver.WaitUntilVisible(this.locator, secondsTimeout);
-        }
+            if (locator != null)
+            {
 
+                return this.Driver.WaitUntilVisible(this.locator, secondsTimeout);
+
+            }
+            return this.Driver.WaitUntilVisible(this.webElement, secondsTimeout);
+        }
     }
 }

@@ -12,9 +12,9 @@ public class PBI78321 : BaseTest
     public void LoginPage_UserLogin_VerifyIfUserIsNotAbleToLogInWithoutCompletingCredentials()
     {
         navigateToUserLogin();
-        lp.ingresarBtn.Click();
-        lp.loginFail.WaitUntilVisible(2);
-        Assert.True(lp.loginFail.Displayed);
+        lp.IngresarBtn.Click();
+        lp.LoginFail.WaitUntilVisible(2);
+        Assert.True(lp.LoginFail.Displayed);
     }
 }
 

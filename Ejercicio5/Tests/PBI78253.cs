@@ -17,22 +17,23 @@ public class PBI78253:BaseTest
         public void UserCreationPage_UserCreation_AdminCreatesUserWithInglesLogicaAndTecnicoExams() //Create user with ingles logica, y tecnico
         {
         navigateToBackOffice();
-        hp.crearUsuarioBtn.Click();
+        hp.CrearUsuarioBtn.Click();
 
-        ucp.userField.WaitUntilVisible(10);
-        ucp.userField.Write("T_A02");
-        ucp.pwdField.Write("abc123");
-        ucp.inglesCheckBox.Click();        //Select checkboxes
-        ucp.logicaCheckBox.Click();        //Select checkboxes
-        ucp.tecnicoCheckBox.Click();
-        ucp.crearUsuarioBtn.Click();        //Click crear usuario
+        ucp.UserField.WaitUntilVisible(10);
+        ucp.UserField.Write("T_A02");
+        ucp.PwdField.Write("abc123");
+        ucp.InglesCheckBox.Click();        //Select checkboxes
+        ucp.LogicaCheckBox.Click();        //Select checkboxes
+        ucp.TecnicoCheckBox.Click();
+        ucp.CrearUsuarioBtn.Click();        //Click crear usuario
 
         //Chek if user is created
-        if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
+        ucp.UserCreationFail.WaitUntilVisible(2);
+        if (ucp.UserCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
         {
             ulp.flag = false;
         }
-        else if (ulp.userCreationSucces.WaitUntilVisible(2))
+        else if (ulp.UserCreationSucces.WaitUntilVisible(2))
         {
             ulp.flag = true;
             Console.WriteLine("User created");

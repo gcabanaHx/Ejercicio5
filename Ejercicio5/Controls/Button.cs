@@ -16,21 +16,6 @@ namespace Ejercicio5.Controls
             : base(webElement)
         { }
 
-        public string Text
-        {
-            get
-            {
-                try
-                {
-                    return this.WebElement.Text;
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-        }
-
         public void Click() => this.WebElement.Click();
 
         public void ClickWait()

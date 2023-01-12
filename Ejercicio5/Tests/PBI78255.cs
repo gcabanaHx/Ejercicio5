@@ -17,19 +17,20 @@ public class PBI78255:BaseTest
         public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams() //Create user only with testing tecnico
         {
         navigateToBackOffice();
-        hp.crearUsuarioBtn.Click();
-        ucp.userField.WaitUntilVisible(2);
-        ucp.userField.Write("T_A04");
-        ucp.pwdField.Write("abc123");
-        ucp.tecnicoCheckBox.Click();        //Select checkboxes
-        ucp.crearUsuarioBtn.Click();        //Click crear usuario
+        hp.CrearUsuarioBtn.Click();
+        ucp.UserField.WaitUntilVisible(2);
+        ucp.UserField.Write("T_A022");
+        ucp.PwdField.Write("abc123");
+        ucp.TecnicoCheckBox.Click();        //Select checkboxes
+        ucp.CrearUsuarioBtn.Click();        //Click crear usuario
 
-         //Check if user is created
-        if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
+        //Check if user is created
+        ucp.UserCreationFail.WaitUntilVisible(2);
+        if (ucp.UserCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
         {
             ulp.flag = false;
         }
-        else if (ulp.userCreationSucces.Text.Equals("El usuario se registró correctamente"))
+        else if (ulp.UserCreationSucces.Text.Equals("El usuario se registró correctamente"))
         {
             ulp.flag = true;
             Console.WriteLine("User created");

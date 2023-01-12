@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,19 +20,9 @@ namespace Ejercicio4.PageObject
             
         }
 
+        public Label UserCreationSucces => new Label(Container.FindElement(By.CssSelector("strong[ng-show='user.message']")));
         public bool flag = false;
-        //public IWebElement userCreationSucces => Container.FindElement(By.CssSelector("strong[ng-show='user.message']"));
 
-        public Label userCreationSucces
-        {
-            get
-            {
-                try
-                {
-                    return new Label(By.CssSelector("strong[ng-show='user.message']"));
-                }
-                catch { return null; }
-            }
-        }
+
     }
 }

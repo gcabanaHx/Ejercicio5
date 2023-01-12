@@ -18,21 +18,6 @@ namespace Ejercicio4.PageObject
         {
             
         }
-        public Button crearUsuarioBtn
-        {
-            get
-            {
-                try
-                {
-                    return new Button(By.CssSelector(".btn-CTA"));
-                }
-                catch
-                {
-                    return null;
-                }
-            }
-        }
-     
-
+        public Button CrearUsuarioBtn => new Button(Container.FindElement(By.CssSelector(".btn-CTA")));
     }
 }

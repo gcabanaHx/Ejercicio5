@@ -15,18 +15,18 @@ public class PBI78322:BaseTest
         public void UserCreationPage_UserCreation_VerifyIfAdminIsNotAbleToCreateUserWithoutExams() 
         {
         navigateToBackOffice();
-        hp.crearUsuarioBtn.Click();
+        hp.CrearUsuarioBtn.Click();
         //Complete user and password
-        ucp.userField.WaitUntilVisible(2);
-        ucp.userField.Write("testingAcademy_095");
-        ucp.pwdField.Write("abc123");
+        ucp.UserField.WaitUntilVisible(2);
+        ucp.UserField.Write("testingAcademy_095");
+        ucp.PwdField.Write("abc123");
         //Does not select any exam and clicks create user
-        ucp.crearUsuarioBtn.Click();
+        ucp.CrearUsuarioBtn.Click();
        
-        if (ucp.userCreationFail.Text.Equals("Ha ocurrido un error: tiene que seleccionar al menos un test"))
+        if (ucp.UserCreationFail.Text.Equals("Ha ocurrido un error: tiene que seleccionar al menos un test"))
         {
             ucp.flag = true;
-            Console.WriteLine(ucp.userCreationFail.Text);
+            Console.WriteLine(ucp.UserCreationFail.Text);
         }
         Assert.True(ucp.flag, "User Not Created");
     }

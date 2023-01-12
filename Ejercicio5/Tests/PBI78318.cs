@@ -15,11 +15,11 @@ public class PBI78318:BaseTest
         public void LoginPage_UserLogin_UserIsNotAbleToLoginAfterCompletingExams() //Verify login after completing all exams
         {
         navigateToUserLogin();
-        lp.userInput.Write("testingacademy_042");
-        lp.passwordInput.Write("abc123");
-        lp.ingresarBtn.ClickWait();
-        lp.loginFail.WaitUntilVisible(5);
-        Assert.True(lp.loginFail.Displayed);      
+        lp.UserInput.Write("testingacademy_042");
+        lp.PasswordInput.Write("abc123");
+        lp.IngresarBtn.Click();
+        lp.LoginFail.WaitUntilVisible(5);
+        Assert.True(lp.LoginFail.Displayed);      
         }
     }
 

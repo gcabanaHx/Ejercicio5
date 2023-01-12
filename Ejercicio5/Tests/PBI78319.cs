@@ -17,10 +17,10 @@ public class PBI78319 : BaseTest
     public void LoginPage_UserLogin_VerifyIfUserIsAbleToLoginWithPendingExams()
     {
         navigateToUserLogin();
-        lp.userInput.Write("testingacademy_043");
-        lp.passwordInput.Write("abc123");
-        lp.ingresarBtn.ClickWait();
-        Assert.True(lp.userDataLabel.Displayed);
+        lp.UserInput.Write("testingacademy_043");
+        lp.PasswordInput.Write("abc123");
+        lp.IngresarBtn.Click();
+        Assert.True(lp.UserDataLabel.Displayed);
     }
 }
 
