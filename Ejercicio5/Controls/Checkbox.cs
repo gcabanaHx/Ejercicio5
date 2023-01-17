@@ -27,6 +27,17 @@ namespace Ejercicio5.Controls
             }
             return flag;
         }
- 
+
+        public bool UnChecked()
+        {
+            var webElement = this.WebElement;
+            bool flag = false;
+            if (webElement.GetAttribute("class").Contains("ng-empty"))
+            {
+                flag = true;
+            }
+            return flag;
+        }
+
     }
 }
