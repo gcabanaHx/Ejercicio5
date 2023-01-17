@@ -14,7 +14,7 @@ namespace Ejercicio4.PageObject
     public class HomePage : BasePage//Herencia para usar la misma instancia
                                     // del driver inicializada en base test
     {
-        public HomePage() :base(By.CssSelector("body"))
+        public HomePage() :base(By.CssSelector(".tabla-resultados"))
         {
             
         }

@@ -20,7 +20,7 @@ public class PBI78253:BaseTest
         hp.CrearUsuarioBtn.Click();
 
         ucp.UserField.WaitUntilVisible(10);
-        ucp.UserField.Write("T_A02");
+        ucp.UserField.Write("T_A34");
         ucp.PwdField.Write("abc123");
         ucp.InglesCheckBox.Click();        //Select checkboxes
         ucp.LogicaCheckBox.Click();        //Select checkboxes
@@ -29,16 +29,11 @@ public class PBI78253:BaseTest
 
         //Chek if user is created
         ucp.UserCreationFail.WaitUntilVisible(2);
-        if (ucp.UserCreationFail.Text.Equals("Ha ocurrido un error: El usuario que intenta crear ya existe, intente de nuevo con otro nombre."))
+        if (ucp.UserCreationFail.Text.Contains("Ha ocurrido un error"))
         {
-            ulp.flag = false;
+            ucp.flag = false;
         }
-        else if (ulp.UserCreationSucces.WaitUntilVisible(2))
-        {
-            ulp.flag = true;
-            Console.WriteLine("User created");
-        }
-        Assert.True(ulp.flag, "User Not Created");
+        Assert.True(ucp.flag, "User Not Created, error displayed");
     }
 
  

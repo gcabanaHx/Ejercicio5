@@ -1,5 +1,6 @@
 ﻿using Ejercicio4.Tests;
 using Ejercicio5.Controls;
+using Ejercicio5.DriverManager;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
 using System;
@@ -22,6 +23,11 @@ namespace Ejercicio4.PageObject
 
         public Label UserCreationSucces => new Label(Container.FindElement(By.CssSelector("strong[ng-show='user.message']")));
         public bool flag = false;
+
+        public string GetUrl()
+        {
+            return DriverInstanceManager.Driver.Url;
+        }
 
 
     }
