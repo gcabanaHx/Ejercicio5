@@ -21,8 +21,7 @@ public class PBI78323 : BaseTest
         ucp.PwdField.Write("abc123");
         ucp.TecnicoCheckBox.Click();     //Select 2 technical exams
         ucp.TestingTecnicoCheckBox.Click();
-        var tecnicoCheckboxClasses = ucp.TecnicoCheckBox.GetAttributeValue("class");//Assert if the first one is still selected
-        Assert.True(tecnicoCheckboxClasses.Contains("ng-empty")); 
+        Assert.True(ucp.TestingTecnicoCheckBox.IsChecked());
   
     }
 }
