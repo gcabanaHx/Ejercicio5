@@ -14,7 +14,7 @@ namespace Ejercicio4.PageObject
     public class LoginPage : BasePage//Herencia para usar la misma instancia
                                      // del driver inicializada en base test
     {
-        public LoginPage() : base(By.CssSelector("body"))
+        public LoginPage() : base(By.CssSelector("body[ng-app=examenInglesApp]"))
         {
 
         }

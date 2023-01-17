@@ -16,7 +16,7 @@ namespace Ejercicio4.PageObject
     public class UserListPage : BasePage//Herencia para usar la misma instancia
                                     // del driver inicializada en base test
     {
-        public UserListPage() :base(By.CssSelector("body"))
+        public UserListPage() :base(By.CssSelector("div.caja-resultados.col-md-12"))
         {
             
         }
