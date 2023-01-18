@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 namespace Ejercicio4.PageObject
 {
 
-    public class HomePage : BasePage//Herencia para usar la misma instancia
-                                    // del driver inicializada en base test
+    public class HomePage : BasePage
     {
         public HomePage() :base(By.CssSelector(".tabla-resultados"))
         {

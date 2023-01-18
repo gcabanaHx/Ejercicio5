@@ -18,7 +18,7 @@ public class PBI78256 : BaseTest
 
 
     [Test]
-    public void UserCreationPage_UserCreation_AdminCreatesUserWithTestingExams() //Create user only with testing
+    public void UserCreationPage_UserCreation_AdminCreatesUserWithTestingExams()
     {
         navigateToBackOffice();
         hp.CrearUsuarioBtn.Click();

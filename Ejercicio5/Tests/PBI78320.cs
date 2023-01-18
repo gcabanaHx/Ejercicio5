@@ -14,7 +14,7 @@ public class PBI78320 : BaseTest
     LoginPage lp = new LoginPage();
 
     [Test]
-    public void LoginPage_UserLogin_UserIsNotAbleToLoginWithNotCreatedUser() //Verify if user is unable to login with non created user
+    public void LoginPage_UserLogin_UserIsNotAbleToLoginWithNotCreatedUser() 
     {
         navigateToUserLogin();
         lp.UserInput.Write("user_not_created");

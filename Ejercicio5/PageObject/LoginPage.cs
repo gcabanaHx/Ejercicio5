@@ -25,23 +25,6 @@ namespace Ejercicio4.PageObject
         public Label LoginFail => new Label(Container.FindElement(By.CssSelector("div.alert")));
         public Label UserDataLabel => new Label(Container.FindElement(By.CssSelector(".data-user")));
 
-
-        public string Title
-        {
-            get
-            {
-                try
-                {
-                    return this.Driver.Title;
-                }
-                catch
-                {
-                    return null;
-                }
-
-            }
-        }
-
         public bool flag = false;
 
     }

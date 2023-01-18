@@ -14,7 +14,7 @@ public class PBI78253:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void UserCreationPage_UserCreation_AdminCreatesUserWithInglesLogicaAndTecnicoExams() //Create user with ingles logica, y tecnico
+        public void UserCreationPage_UserCreation_AdminCreatesUserWithInglesLogicaAndTecnicoExams()
         {
         navigateToBackOffice();
         hp.CrearUsuarioBtn.Click();

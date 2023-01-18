@@ -12,8 +12,7 @@ public class PBI78318:BaseTest
     LoginPage lp = new LoginPage();
 
     [Test]
-        public void LoginPage_UserLogin_UserIsNotAbleToLoginAfterCompletingExams() //Verify login after completing all exams
-        {
+        public void LoginPage_UserLogin_UserIsNotAbleToLoginAfterCompletingExams() {  
         navigateToUserLogin();
         lp.UserInput.Write("testingacademy_042");
         lp.PasswordInput.Write("abc123");

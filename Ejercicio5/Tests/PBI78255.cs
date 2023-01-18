@@ -14,7 +14,7 @@ public class PBI78255:BaseTest
     UserListPage ulp = new UserListPage();
 
     [Test]
-        public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams() //Create user only with testing tecnico
+        public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams() 
         {
         navigateToBackOffice();
         hp.CrearUsuarioBtn.Click();
