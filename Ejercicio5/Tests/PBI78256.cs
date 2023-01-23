@@ -25,7 +25,7 @@ public class PBI78256 : BaseTest
         ucp.refresh(); // if not, stale element will be displayed
         ucp.UserField.Write("T_A37");//Complete user and password
         ucp.PwdField.Write("abc123");
-        ucp.TestingCheckBox.Click();//Select checkboxes
+        ucp.TestingCheckBox.Check();//Select checkboxes
         ucp.CrearUsuarioBtn.Click();//Click crear usuario
 
         //Verify if user is created

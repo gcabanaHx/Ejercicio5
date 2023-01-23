@@ -22,9 +22,9 @@ public class PBI78253:BaseTest
         ucp.UserField.WaitUntilVisible(10);
         ucp.UserField.Write("T_A34");
         ucp.PwdField.Write("abc123");
-        ucp.InglesCheckBox.Click();        //Select checkboxes
-        ucp.LogicaCheckBox.Click();        //Select checkboxes
-        ucp.TecnicoCheckBox.Click();
+        ucp.InglesCheckBox.Check();        //Select checkboxes
+        ucp.LogicaCheckBox.Check();        //Select checkboxes
+        ucp.TecnicoCheckBox.Check();
         ucp.CrearUsuarioBtn.Click();        //Click crear usuario
 
         //Chek if user is created

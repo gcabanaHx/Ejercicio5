@@ -15,8 +15,23 @@ namespace Ejercicio5.Controls
         public CheckBox(IWebElement webElement)
           : base(webElement)
         { }
-        public void Click() => this.WebElement.Click();
+        //public void Check() => this.WebElement.Click();
 
+        public void Check()
+        {
+            if (IsChecked().Equals(false))
+            {
+                this.WebElement.Click();
+            }
+        }
+
+        public void UnCheck()
+        {
+            if (IsChecked().Equals(true))
+            {
+                this.WebElement.Click();
+            }
+        }
         public bool IsChecked()
         {
             var webElement = this.WebElement;
@@ -28,7 +43,7 @@ namespace Ejercicio5.Controls
             return flag;
         }
 
-        public bool UnChecked()
+       /* public bool UnChecked()
         {
             var webElement = this.WebElement;
             bool flag = false;
@@ -37,7 +52,7 @@ namespace Ejercicio5.Controls
                 flag = true;
             }
             return flag;
-        }
+        }*/
 
     }
 }

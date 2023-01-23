@@ -19,11 +19,11 @@ public class PBI78251:BaseTest
         navigateToBackOffice();
         hp.CrearUsuarioBtn.Click();
         ucp.UserField.WaitUntilVisible(2);
-        ucp.UserField.Write("T_A33");
+        ucp.UserField.Write("T_A35");
         ucp.PwdField.Write("abc123");        
-        ucp.InglesCheckBox.Click();//Select checkboxes
-        ucp.LogicaCheckBox.Click();
-        ucp.TestingCheckBox.Click();
+        ucp.InglesCheckBox.Check();//Select checkboxes
+        ucp.LogicaCheckBox.Check();
+        ucp.TestingCheckBox.Check();
         ucp.CrearUsuarioBtn.Click();//Click crear usuario
 
         //Check if user is created

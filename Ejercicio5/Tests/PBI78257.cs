@@ -21,7 +21,7 @@ public class PBI78257:BaseTest
         ucp.refresh();
         ucp.UserField.Write("T_A38");
         ucp.PwdField.Write("abc123");
-        ucp.TestingTecnicoCheckBox.Click();//Select checkboxes
+        ucp.TestingTecnicoCheckBox.Check();//Select checkboxes
         ucp.CrearUsuarioBtn.Click();//Click crear usuario
 
         ucp.UserCreationFail.WaitUntilVisible(2);

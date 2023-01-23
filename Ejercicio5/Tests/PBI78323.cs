@@ -19,8 +19,8 @@ public class PBI78323 : BaseTest
         ucp.UserField.WaitUntilVisible(2);//Complete user and password
         ucp.UserField.Write("testingAcademy_095");
         ucp.PwdField.Write("abc123");
-        ucp.TecnicoCheckBox.Click();     //Select 2 technical exams
-        ucp.TestingTecnicoCheckBox.Click();
+        ucp.TecnicoCheckBox.Check();     //Select 2 technical exams
+        ucp.TestingTecnicoCheckBox.Check();
         Assert.True(ucp.TestingTecnicoCheckBox.IsChecked());
   
     }
