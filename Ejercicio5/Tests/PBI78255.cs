@@ -5,34 +5,27 @@ using NUnit;
 using NUnit.Framework;
 using Ejercicio4.Tests;
 using Ejercicio4;
+using Ejercicio5.Utils;
 
-public class PBI78255:BaseTest 
-    {
-   
-    HomePage hp = new HomePage();
-    UserCreationPage ucp = new UserCreationPage();
-    UserListPage ulp = new UserListPage();
+public class PBI78255 : BaseTest
+{
+    private HomePage HomePage => new HomePage();
+    private UserCreationPage UserCreationPage => new UserCreationPage();
+    private UserListPage UserListPage => new UserListPage();
 
     [Test]
-        public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams() 
-        {
+    public void UserCreationPage_UserCreation_AdminCreatesUserWithTecnicoExams()
+    {
+        var userFieldName = Utilities.GetRandomString();
+
         navigateToBackOffice();
-        hp.CrearUsuarioBtn.Click();
-        ucp.UserField.WaitUntilVisible(2);
-        ucp.UserField.Write("T_A36");
-        ucp.PwdField.Write("abc123");
-        ucp.TecnicoCheckBox.Check();        //Select checkboxes
-        ucp.CrearUsuarioBtn.Click();        //Click crear usuario
+        HomePage.CrearUsuarioBtn.Click();
+        UserCreationPage.UserField.WaitUntilVisible(2);
+        UserCreationPage.UserField.Write(userFieldName);
+        UserCreationPage.PwdField.Write("abc123");
+        UserCreationPage.TecnicoCheckBox.Check();
+        UserCreationPage.CrearUsuarioBtn.Click();
 
-        //Check if user is created
-        ucp.UserCreationFail.WaitUntilVisible(2);
-        if (ucp.UserCreationFail.Text.Contains("Ha ocurrido un error"))
-        {
-            ucp.flag = false;
-        }
-        Assert.True(ucp.flag, "User Not Created, error displayed");
+        Assert.True(UserListPage.UserCreationSucces.Displayed);
     }
-
- 
-    }
-
+}

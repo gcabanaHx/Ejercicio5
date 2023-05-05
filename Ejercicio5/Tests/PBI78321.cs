@@ -5,16 +5,16 @@ using Ejercicio5.Controls;
 public class PBI78321 : BaseTest
 {
 
-    LoginPage lp = new LoginPage();
+    LoginPage LoginPage => new LoginPage();
 
 
     [Test]
     public void LoginPage_UserLogin_VerifyIfUserIsNotAbleToLogInWithoutCompletingCredentials()
     {
         navigateToUserLogin();
-        lp.IngresarBtn.Click();
-        lp.LoginFail.WaitUntilVisible(2);
-        Assert.True(lp.LoginFail.Displayed);
+        LoginPage.IngresarBtn.Click();
+        LoginPage.LoginFail.WaitUntilVisible(2);
+        Assert.True(LoginPage.LoginFail.Displayed);
     }
 }
 

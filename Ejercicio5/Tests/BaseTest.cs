@@ -31,10 +31,6 @@ namespace Ejercicio4.Tests
 
         }
 
-        public WebDriverWait wait()
-        {
-            return wait();
-        }
         [TearDown]
         public void close()
         {

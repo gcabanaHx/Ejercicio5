@@ -10,17 +10,15 @@ using OpenQA.Selenium.DevTools;
 
 public class PBI78319 : BaseTest
 {
-
-    LoginPage lp = new LoginPage();
+    private LoginPage LoginPage => new LoginPage();
 
     [Test]
     public void LoginPage_UserLogin_VerifyIfUserIsAbleToLoginWithPendingExams()
     {
         navigateToUserLogin();
-        lp.UserInput.Write("testingacademy_043");
-        lp.PasswordInput.Write("abc123");
-        lp.IngresarBtn.Click();
-        Assert.True(lp.UserDataLabel.Displayed);
+        LoginPage.UserInput.Write("testingacademy_043");
+        LoginPage.PasswordInput.Write("abc123");
+        LoginPage.IngresarBtn.Click();
+        Assert.True(LoginPage.UserDataLabel.Displayed);
     }
 }
-

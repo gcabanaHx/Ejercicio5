@@ -11,17 +11,17 @@ using Ejercicio5.Controls;
 public class PBI78320 : BaseTest
 {
 
-    LoginPage lp = new LoginPage();
+    LoginPage LoginPage => new LoginPage();
 
     [Test]
     public void LoginPage_UserLogin_UserIsNotAbleToLoginWithNotCreatedUser() 
     {
         navigateToUserLogin();
-        lp.UserInput.Write("user_not_created");
-        lp.PasswordInput.Write("abc123");
-        lp.IngresarBtn.Click();
-        lp.LoginFail.WaitUntilVisible(5); //Wait error display
-        Assert.True(lp.LoginFail.Displayed);
+        LoginPage.UserInput.Write("user_not_created");
+        LoginPage.PasswordInput.Write("abc123");
+        LoginPage.IngresarBtn.Click();
+        LoginPage.LoginFail.WaitUntilVisible(5); //Wait error display
+        Assert.True(LoginPage.LoginFail.Displayed);
     }
 }
 
